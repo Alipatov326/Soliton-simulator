@@ -22,14 +22,8 @@ def kdv_rhs(u):
     u_xxx = np.gradient(np.gradient(np.gradient(u, dx), dx), dx)
     return -6 * u * u_x - u_xxx
 
-#def rk4_step(u, dt):
-#    k1 = dt * kdv_rhs(u)
-#    k2 = dt * kdv_rhs(u + 0.5 * k1)
-#    k3 = dt * kdv_rhs(u + 0.5 * k2)
-#    k4 = dt * kdv_rhs(u + k3)
-#    return u + (k1 + 2 * k2 + 2 * k3 + k4) / 6
-
 # Some Runge-Jutta method I found on the internet used for time evolution
+# WIll prob edit later
 def rk4_step(u, dt):
     k1 = dt * kdv_rhs(u)
     k2 = dt * kdv_rhs(u + 0.5 * k1)
